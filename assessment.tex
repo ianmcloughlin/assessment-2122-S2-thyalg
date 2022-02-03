@@ -1,0 +1,154 @@
+\documentclass[a4paper, 12pt]{scrartcl}
+
+  % Enables the use of colour.
+  \usepackage{xcolor}
+  % Syntax high-lighting for code. Requires Python's pygments.
+  \usepackage{minted}
+  % Enables the use of umlauts and other accents.
+  \usepackage[utf8]{inputenc}
+  % Diagrams.
+  \usepackage{tikz}
+  % Settings for captions, such as sideways captions.
+  \usepackage{caption}
+  % Symbols for units, like degrees and ohms.
+  \usepackage{gensymb}
+  % Latin modern fonts - better looking than the defaults.
+  \usepackage{lmodern}
+  % Allows for columns spanning multiple rows in tables.
+  \usepackage{multirow}
+  % Better looking tables, including nicer borders.
+  \usepackage{booktabs}
+  % More math symbols.
+  \usepackage{amssymb}
+  % More math fonts, like \mathbb.
+  \usepackage{amsfonts}
+  % More math layouts, equation arrays, etc.
+  \usepackage{amsmath}
+  % More theorem environments.
+  \usepackage{amsthm}
+  % More column formats for tables.
+  \usepackage{array}
+  % Adjust the sizes of box environments.
+  \usepackage{adjustbox}
+  % Better looking single quotes in verbatim and minted environments.
+  \usepackage{upquote}
+  % Better blank space decisions.
+  \usepackage{xspace}
+  % Better looking tikz trees.
+  \usepackage{forest}
+  % URLs.
+  \usepackage[hidelinks]{hyperref}
+  % Plotting.
+  \usepackage{pgfplots}
+  % Calculates the number of pages.
+  \usepackage{lastpage}
+  % Styling the abstract.
+  \usepackage{abstract}
+
+  
+  % Various tikz libraries.
+  % For drawing mind maps.
+  \usetikzlibrary{mindmap}
+  % For adding shadows.
+  \usetikzlibrary{shadows}
+  % Extra arrows tips.
+  \usetikzlibrary{arrows.meta}
+  % Old arrows.
+  \usetikzlibrary{arrows}
+  % Automata.
+  \usetikzlibrary{automata}
+  % For more positioning options.
+  \usetikzlibrary{positioning}
+  % Creating chains of nodes on a line.
+  \usetikzlibrary{chains}
+  % Fitting node to contain set of coordinates.
+  \usetikzlibrary{fit}
+  % Extra shapes for drawing.
+  \usetikzlibrary{shapes}
+  % For markings on paths.
+  \usetikzlibrary{decorations.markings}
+  % For advanced calculations.
+  \usetikzlibrary{calc}
+  
+  % GMIT colours.
+  \definecolor{gmitblue}{RGB}{20,134,225}
+  \definecolor{gmitred}{RGB}{220,20,60}
+  \definecolor{gmitgrey}{RGB}{67,67,67}
+
+  % Set minted up.
+  \usemintedstyle{manni}
+  \setminted{baselinestretch=1.2, bgcolor=gmitgrey!10}
+
+  % Change the displayed name of the references section.
+  \renewcommand{\refname}{\selectfont\large References} 
+
+  % PGF plots version.
+  \pgfplotsset{compat=1.17}
+
+  % Heading
+  \title{\vspace{-20mm}Assessment}
+  \author{Theory of Algorithms, Summer 21/22}
+  \date{Due: last commit on or before May 8\textsuperscript{th}, 2022\vspace{-6mm}}
+
+\begin{document}
+  
+  \maketitle
+
+  These are the instructions for the assessment of Theory of Algorithms in Summer 2021/2022.
+  The assessment is worth 100\% of the marks for the module.
+  Please read the \emph{Using git for assessments}~\cite{usinggit} document on the Moodle page which applies here.
+  As always, you must also follow the code of student conduct and the policy on plagiarism~\cite{gmitqaf}.
+
+  \section*{Instructions}
+  
+  The purpose of this assessment is to ensure that you have achieved the learning outcomes of the module while also providing you with sample work to show prospective employers.
+  The overall assessment is split into the three interconnected components as detailed below.
+  The percentages beside each heading give the weighting of each of the three components.
+  You may assume that each bullet point has an equal weighting within its component.
+  Note, however, that the examiners' overall impression of your submission may override the individual weightings where deemed appropriate.
+
+  \subsubsection*{GitHub Repository (20\%)}
+  Create a GitHub repository containing two Jupyter notebooks -- these are described further down.
+  The repository should contain the following:
+  \begin{itemize}
+    \item Clear and informative \texttt{README.md} explaining why the repository exists, what is in it, and how to run the notebooks.
+    \item Comprehensive commit history, with each commit representing a reasonable unit of work.
+  \end{itemize}
+
+  \subsubsection*{Post Correspondence Problem Notebook (40\%)}
+  Include in your repository a Jupyter notebook called \texttt{post-correspondence.ipynb} that contains the following.
+  \begin{itemize}
+    \item Definition and explanation of the Post Correspondence Problem.
+    \item Definition and explanation of the Bounded Post Correspondence Problem.
+    \item Algorithm written in Python that solves the Bounded Post Correspondence Problem.
+    \item Explanation of what an undecidable problem is in computability theory, with reference to the Post Correspondence Problem.
+  \end{itemize}
+  
+  \subsubsection*{Countdown Numbers Game Notebook (40\%)}
+  Include in your repository a Jupyter notebook called \texttt{countdown.ipynb} that contains the following.
+  \begin{itemize}
+    \item Overview and explanation of the Countdown Numbers Game~\cite{countdownnumbers}.
+    \item Dicussion of the complexity of the Countdown Numbers Game~\cite{countdownnumbers}.
+    \item Python code, written in a functional programming style~\cite{pythonfunctional}, to solve the Countdown Numbers Game.
+    \item Explanation of the functional~\cite{pythonfunctional} aspects of your code.
+  \end{itemize}
+
+  \section*{More information about marking}
+    In completing each component of the assessment, you should consider the following four overall aspects of academic work.
+    It is important that your submission provides direct evidence of each aspect.
+    For instance, your commit history should demonstrate that you were consistent in your work.
+    Likewise, your submission should have references in it to demonstrate that you considered the literature and the work of others.
+  
+    \subsubsection*{Research}
+    Evidence of research performed on topic; submission based on referenced literature, particularly academic literature; evidence of understanding the documentation for any software or libraries used.
+    \subsubsection*{Development}
+    Environment can be set up as described; code works without tweaking and as described; code is efficient, clean, and clear; evidence of consideration of standards and conventions appropriate to code of this kind.
+    \subsubsection*{Consistency}
+    Evidence of planning and project management; pragmatic attitude to work as evidenced by well-considered commit history; commits are of a reasonable size; consideration of how commit history will be perceived by others.
+    \subsubsection*{Documentation}
+    Clear documentation of how to create an environment in which any code will run, how to prepare the code for running, how to run the code, and what to expect upon running the code. Concise descriptions of code in comments, README, and any documents or notebooks.
+    
+  \bibliographystyle{IEEEtran}
+  \bibliography{bibliography}
+  
+\end{document}
